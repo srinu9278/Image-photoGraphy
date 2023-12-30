@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+</head>
+	<style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+*{
+    margin:3;
+    padding: 20;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+	table,th,td{
+	border-collapse:collapse;
+	padding:15px;
+	}
+    body{
+            background-image: url("images/photography/8.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+
+            
+        }
+        td{
+            color: white;
+            
+        }
+	</style>
+    
+
+    <body>
+        <h3></h3>
+
+        <form action="data.php" autocomplete="off"  id="form" method="post">
+            <table><!---->
+
+                <tr style="font-size:larger; color:  rgb(225, 20, 132 ">
+                    <th colspan="2" ><h2>Slot Registration </h2></th>
+                </tr>
+                
+                <tr>
+                    <td>FULL NAME</td>
+                    <td> <input type="text" id="username"  placeholder="name"  name="uuser">
+                      <span id="uname"></span><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DATE OF EVENT:</td>
+                    <td><input type="date" name="date"></td>
+                </tr>
+                <tr>
+                    <td> SELECTION OF PHOTOGRAPHY</td>
+                    <td>
+                        <input type="text" list="suggest" id="wed-types" name='wedd'>
+                        <datalist id="suggest">
+                         <option>prewedding</option>
+                          <option>wedding</option>
+
+                                <option>maternity</option>
+                                     <option>born_baby_shoot</option>
+                                         <option>family_shoot</option>
+                                         <option>nature</option>
+                                         <option>wildlife</option>
+                            <option>birthday</option>
+                             </datalist> 
+                    <br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Place  Of Photography</td>
+                    <td>
+                        <input type="text" list="suggestions" id="wed-places" name='places'>
+                        <datalist id="suggestions">
+                                        <option>bangalore</option>
+                                        <option>coorg</option>
+                                        <option>hampi</option>
+                                        <option>ooty</option>
+                                         <option>mahabalipuram</option>
+                                         <option>kodaikanal</option>
+                                         <option>tirumala</option>
+                                        <option>araku</option>
+                                        <option>vizag</option>
+                                        <option>gandikota</option>
+                                        <option>hyderabad</option>
+                                        <option>munnar</option>
+                                        <option>alleppy</option>
+                                        <option>varkala</option>
+                                        <option>goa</option>
+                         </datalist> 
+                    <br><br>
+                    </td>
+                </tr>
+                
+
+                <tr>
+                  <td colspan="2"> 
+                      <fieldset> <!--fieldset and legend-->
+                        <legend align="center">Contact details</legend>
+                        <table>
+                        
+                                 <tr>
+                                 <label for="em">Email address:</label>
+                                <input type="email" id="em" placeholder="email"  name="uemail"> <span id="emm"></span><br><br>
+                                 </tr>
+                        <tr>         
+                        <label for="phon">Phone number:</label> <input type="tel"  pattern="[0-9]{10}" minlength=10 id="phon" placeholder="Mobile number" name="umobile">
+                         <span id="mobi"></span> <br><br>
+                        </tr>
+                        
+                            <tr>
+                                <td>ADDRESS:</td>
+                                <td><input type="text"name="address"></td>
+
+                                
+                            </tr>
+                        
+                           
+                        
+                        
+                        
+                        
+                        
+                        </table>
+                     </fieldset>
+                  </td>
+                 </tr>
+                
+                
+                
+
+                
+                
+                        
+                <table>
+                <tr>
+                    <td> </td>
+                    <td>
+                        <input type="submit" />
+                        <input type="reset" />
+                    </td>
+                </tr>
+            </table>
+            </table>  
+        </form>    
+ <script>
+         let form=document.getElementById('form');
+         form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        validate();
+      });
+
+      function validate(){
+        let name = document.getElementById("username").value.trim();
+        let mail=document.getElementById("em").value.trim();
+        let phone=document.getElementById("phon").value.trim();
+        
+        let nameValid=true;
+        let gmail=true;
+        let vphone=true;
+
+        let nameres=document.getElementById('uname');
+        let rmail=document.getElementById('emm');
+        let mobile=document.getElementById('mobi');
+
+
+        //name validation
+        if(name==""){
+            nameres.innerText="cannot be null";
+            nameValid=false;
+        }
+        else if(name.length<3){
+            nameres.innerText="atleast shoud contain 3 letters";
+            nameValid=false;
+        }
+        else if(!name.match(/[a-zA-Z]/)){
+            nameres.innerText="name dont have numbers";
+            nameValid=false;
+        }
+        else if(name.match(/[0-9]/)){
+            nameres.innerText="NO NUMBERS";
+            nameValid=false;
+        }
+        else{
+            nameres.innerText="";
+        }
+
+        //email validation
+        if(mail==""){
+            rmail.innerText="email cannot be empty";
+            gmail=false;
+        }
+        
+        else if(!mail.match( /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)){
+            rmail.innerText="email not matched";
+            gmail=false;
+        }
+        else{
+            rmail.innerText="";
+        }
+        //phone number validation
+        if(phone==""){
+            mobile.innerText="cannot be empty";
+            vphone=false;
+        }
+        else if(phone.match(/[a-zA-Z]/)){
+            mobile.innerText="phone number don't have alphabets";
+            vphone=false;
+        }
+        else if(phone.match(/[$#@_\.]/)){
+            mobile.innerText="no special characters in mobile number";
+            vphone=false;
+        }
+        else if(!phone.match(/[0-9]/)){
+            mobile.innerText="ONLY NUMBERS";
+            vphone=false;
+        }
+        else if(phone.length>10 || phone.length<10){
+            mobile.innerText="Phone must contain 10 ";
+            vphone=false;
+        }
+
+
+        else{
+            mobile.innerText="";
+        }
+
+
+        if (nameValid && gmail &&vphone) {
+          form.submit();
+        }
+
+    }
+    </script>
+    </body>
+</html>

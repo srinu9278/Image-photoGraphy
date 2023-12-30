@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+
+    </head>
+    <style>
+    .bimg {
+        padding-left: 500px;
+        padding-top: 50px;
+        padding-right: 500px;
+        font-family: 'Times New Roman', Times, serif;
+        background:url(images/h1.jpg) no-repeat;
+        background-size: cover;
+    }
+    
+</style>
+<body class="bimg">
+    <div class="d">
+     
+
+    <form action="form_data.php" autocomplete="off" method="post" id='form'>
+        <div class="container"
+           <b>  <h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="purple" size=5>HIRING REGISTRATION</h2></font>
+</div>
+             &nbsp;&nbsp;<b>Name</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;:</label>
+
+             <input type="text" name="uuser" id="username" placeholder="Enter Name" size="22" ><br>
+             <span id="uname"></span>
+                <br>
+             <b>Date Of Birth</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<input type="date" name="date" ><br><br>
+
+&nbsp;<b>Gender</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<input type="radio" id="gender" name="gender" >male
+                    <input type="radio" id="gender" name="gender" >female <br><br>
+        
+
+                   &nbsp;<b>Qualification</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" list="suggestion" id="qualification" name="qualification">
+                        <datalist id="suggestion">
+                                <option>B-tech</option>
+                                <option>M-tech</option>
+                                <option>Degree</option>
+                                <option>Tenth</option>
+                                <option>Inter</option>
+                                <option>Others</option>
+                         </datalist> <br><br>
+
+                     <b>Specializations</b>&nbsp;&nbsp;&nbsp;&nbsp;:<input type="text" list="suggest" id="specialization" name="specialization"></b><br><br>
+                     <datalist id="suggest">
+                                <option>Diploma in Photography</option>
+                                    <option>Bachelor of Arts(Visual Arts Photography)</option>
+                                    
+                                    <option>B.A(Hons)Communication design</option>
+                                    <option>fashion photographer</option>
+                                    <option>film set photographer</option>
+                                    <option>wedding photographer</option>
+                                    <option>fine art photographer</option>
+
+                        </datalist><br><br>
+                        <fieldset>
+                            <legend align="center"><b><font size=5>Contact</b></font></legend>
+                           <label for="phon"><b>PhoneNumber:</b></label>
+                           <input type="tel" id="phon" placeholder="mobile number" name="umobile">
+                           <span id="mobi"></span>
+                           <br>
+                          <br> <label for="em"><b>Email</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+                           <input type="email"  id="em" name="uemail" >
+                           <span id="emm"></span><br><br>
+                           <b> Address</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<input type="text" name="address">
+                        </fieldset>
+                      <!-- <br> SEND US YOUR PHOTOS<br><br><input type="file" accept="image/*"><br>
+                      <br> <input type="file"><br>
+                       <br><input type="file"><br>-->
+                       <br><br> <button type="submit" name="result">Submit</button>&nbsp;
+             <button type="reset" class="button" id="reset">Reset</button><br><br></b>
+
+         </form>
+<script>
+        let form=document.getElementById('form');
+         form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        validate();
+      });
+
+      function validate(){
+        let name = document.getElementById("username").value.trim();
+        let mail=document.getElementById("em").value.trim();
+        let phone=document.getElementById("phon").value.trim();
+
+        let nameValid=true;
+        let gmail=true;
+        let vphone=true;
+
+        let nameres=document.getElementById('uname');
+        let rmail=document.getElementById('emm');
+        let mobile=document.getElementById('mobi');
+
+        if(name===""){
+            nameres.innerText="name can't be null";
+            nameValid=false;
+        }
+        else if(name.length<3){
+            nameres.innerText="atleast shoud contain 3 letters";
+            nameValid=false;
+        }
+        else if(!name.match(/[a-zA-Z]/)){
+            nameres.innerText="name dont have numbers";
+            nameValid=false;
+        }
+        else if(name.match(/[0-9]/)){
+            nameres.innerText="NO NUMBERS";
+            nameValid=false;
+        }
+        else{
+            nameres.innerText="";
+        }
+
+           //email validation
+           if(mail==""){
+            rmail.innerText="email can't be empty";
+            gmail=false;
+        }
+        
+        else if(!mail.match( /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)){
+            rmail.innerText="email not matched";
+            gmail=false;
+        }
+        else{
+            rmail.innerText="";
+        }
+
+                //phone number validation
+                if(phone==""){
+            mobile.innerText="ph number can't be empty";
+            vphone=false;
+        }
+        else if(phone.match(/[a-zA-Z]/)){
+            mobile.innerText="phone number don't have alphabets";
+            vphone=false;
+        }
+        else if(phone.match(/[$#@_\.]/)){
+            mobile.innerText="no special characters in mobile number";
+            vphone=false;
+        }
+        else if(!phone.match(/[0-9]/)){
+            mobile.innerText="ONLY NUMBERS";
+            vphone=false;
+        }
+        else if(phone.length>10 || phone.length<10){
+            mobile.innerText="Phone must contain 10 ";
+            vphone=false;
+        }
+
+
+        else{
+            mobile.innerText="";
+        }
+
+        if (nameValid && gmail && vphone) {
+          form.submit();
+        }
+    }
+</script>
+</body>
+
+</html>
+         
+   
+

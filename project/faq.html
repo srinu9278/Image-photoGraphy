@@ -1,0 +1,160 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FAQ UI Design</title>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" target="_blank" rel="noreferrer noopener"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+body {
+    
+    font-family: "Roboto", sans-serif;
+    background-image: url("images/faq3.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;}
+
+ 
+.main-content {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position:absolute;
+    top: 25;
+    
+   
+}
+ 
+.flex-center {
+    align-items: center;
+}
+.accordion-button{
+    margin-bottom: 10px;
+}
+.accordion-body {
+    margin-top: 15px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+ 
+.circle-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2b4eff;
+    border: 5px solid #b2bfff;
+    color: #fff;
+    margin-left: -20px;
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+.accordion-item{
+    border: 0px!important;
+}
+.accordion-button:not(.collapsed){
+    border: 0px!important;
+    color: #0c63e4;
+    background-color: #ffffff;
+    box-shadow: inset 0 0px 0 rgb(0 0 0 / 13%);
+}
+</style>
+<body>
+  <br>
+  <br>
+  <div class="back">
+    <a href="bs2.html">&#8249; Home</a>
+    </div>
+<section class="main-content">
+  <div class="container">
+    <h1 class="text-center text-uppercase mb-5" style="color: whitesmoke ; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Frequently  Asked  Questions</h1>
+    <br>
+    <br>
+    <div class="row flex-center">
+      <div class="col-sm-10 offset-sm-2">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <div class="circle-icon"> <i class="fa fa-question"></i> </div>
+              <span>What types of photography do you do?</span> </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body"> <strong>Photography have many types.....</strong> Some photographers do a little of everything. Others specialize in one type of photography or another. The first thing that people are going to want to know is what kind of services you offer. If they’re looking for a family photographer or someone to do their son’s senior portraits, for example, they wouldn’t want to work with a wedding photographer. 
+
+                Make sure that you list all the different types of sessions or services you can provide, as well as anything you’re willing to discuss on a case-by-case basis. This is your chance to educate people, but also encourage them to reach out to you to discuss what they need and how you can help.  </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <div class="circle-icon"> <i class="fa fa-question"></i> </div>
+              <span>Why should I hire a professional photographer?</span> </button>
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body"> <strong>This is the million-dollar question</strong>  People want to know exactly what it is that sets you apart and makes you worth their time. This is your place to make it known. Explain all the benefits of working with a professional, including the fact that you won’t have to worry about one of your family members or friends missing out on whatever event is being captured because they’re the one manning the camera. Explain that you have experience in producing high-quality images that will last a lifetime and create wonderful memories and take advantage of this opportunity to link to testimonials to seal the deal. </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> 
+                <div class="circle-icon"> <i class="fa fa-question"></i> </div>
+              <span>When will we get our finished prints?</span> </button>
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body"> <strong> Here’s another common question that we see. </strong>People are impatient and they want their finished product as soon as possible. They often don’t understand the time-consuming process of editing and proofing photos before they can be delivered to the client. Make sure that you not only explain how long clients should expect to wait, but why the wait takes that much time so that they are aware of what they are paying for—your professional expertise</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <div class="circle-icon"> <i class="fa fa-question"></i> </div>
+              <span>Do you include digital images?</span> </button>
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+              <div class="accordion-body"> <strong>Today, people often want digital copies of photos along with or even instead of physical photos. </strong>Moreover, some photographers only work with certain mediums in the same regard, for one reason or another. Therefore, most people will ask if digital images are available if they want them. However, they may not always be an option. Be sure to advise as to whether you offer digital images with prints, instead of them, or in any other capacity. If you do not provide digital image copies for any reason, explain that here so that clients understand your reasoning.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <div class="circle-icon"> <i class="fa fa-question"></i> </div>
+              <span>How much are your photography services?</span> </button>
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+              <div class="accordion-body"> <strong>This might seem like it’s too open-ended for an FAQ page</strong>, but that’s the genius of it—it allows you a little room to market your services and link to your pricing page so that you can convert more leads and generate more website traffic. In this answer, you should advise on how your rate structure works, whether you charge hourly, per session, or by the event, if packages are available, and so forth. Give people a condensed version of your pricing page, and then use the opportunity to link to that page for people who want more information. </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+            <div class="circle-icon"> <i class="fa fa-question"></i> </div>
+          <span>How long will our session take?</span> </button>
+            </button>
+        </h2>
+        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+          <div class="accordion-body"> <strong>People are always worried about time. </strong>They want to know you’re not going to take too much of it, but also that they’ll get every second that they pay for. It’s a balancing act, but again this is about providing information more than actually giving a specific timeline. If you have a time for certain sessions, list that here. For example, you might offer two hours for senior portrait sessions, while wedding photography sessions might be booked as all-day events. Reassure people that they’ll get the time and attention that they deserve, but that you won’t overstay your welcome or drag the process out longer than necessary. More than an actual time, that’s what they want to hear.</div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" target="_blank" rel="noreferrer noopener">https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js</a>" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
